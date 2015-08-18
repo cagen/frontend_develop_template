@@ -1,0 +1,14 @@
+{
+  "name": "App-name",
+  "private": "true",
+  "devDependencies": {
+    "bootstrap":"*"
+  },
+  "exportsOverride": {
+    "bootstrap": {
+      "js": "dist/js/bootstrap.js",
+      "css": "dist/css/bootstrap.css",
+      "font": "dist/fonts/*"
+    }
+  }
+}
