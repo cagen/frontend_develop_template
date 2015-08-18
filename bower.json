@@ -7,7 +7,7 @@
   "exportsOverride": {
     "bootstrap": {
       "js": "dist/js/bootstrap.js",
-      "css": "dist/css/bootstrap.css",
+      "less": "less",
       "font": "dist/fonts/*"
     }
   }

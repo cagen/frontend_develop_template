@@ -9,7 +9,7 @@ module.exports = (grunt) ->
 
     watch:
       files: ['js/**', 'css/**', 'img/**', 'html/**', 'vendor/**']
-      tasks: ['coffee', 'sass', 'concat', 'copy']
+      tasks: ['coffee', 'less', 'concat', 'copy']
 
     concat:
       options:
@@ -23,7 +23,6 @@ module.exports = (grunt) ->
         dest: 'dist/js/application.js'
       css:
         src: [
-          'vendor/bootstrap/css/bootstrap.css'
           "css/compile/*.css"
         ]
         dest: 'dist/css/application.css'
@@ -47,12 +46,10 @@ module.exports = (grunt) ->
         files:
           'js/compile/main.js': ['js/main.coffee'] # compile and concat into single file
 
-    sass:
-      dist:
-        options:
-          style: 'expanded'
+    less:
+      development:
         files:
-          'css/compile/main.css': 'css/main.scss'
+          "css/compile/main.css": "css/main.less"
 
     copy:
       fonts:
@@ -80,7 +77,7 @@ module.exports = (grunt) ->
           base: 'dist'
 
   grunt.loadNpmTasks('grunt-bower-task')
-  grunt.loadNpmTasks('grunt-contrib-sass')
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-coffee')
 
   grunt.loadNpmTasks('grunt-contrib-clean')
@@ -90,4 +87,5 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-connect')
   grunt.loadNpmTasks('grunt-contrib-watch')
 
-  grunt.registerTask('default', ['bower', 'sass', 'coffee', 'clean', 'concat', 'copy', 'connect', 'watch'])
+
+  grunt.registerTask('default', ['bower', 'less', 'coffee', 'clean', 'concat', 'copy', 'connect', 'watch'])
