@@ -18,25 +18,28 @@ module.exports = (grunt) ->
         files: 'css/**'
         tasks: ['sass', 'concat']
       otherFiles:
-        files: ['img/**', 'html/**', '<%= vendorPath %>/**']
+        files: ['img/**', 'html/**', '<%= meta.vendorPath %>/**']
         tasks: ['concat', 'copy']
       config:
         files: ['gruntfile.coffee', 'bower.json', 'package.json']
         tasks: ['bower', 'sass', 'coffee', 'clean', 'concat', 'copy']
-
+      # reloadFiles:
+      #   files: ['<%= meta.distPath %>/**']
+      #   options:
+      #     livereload: true
 
     concat:
       options:
         separator: ';\n' # If minified before concat
       js:
         src: [
-          '<%= vendorPath %>/jquery/jquery.js'
+          '<%= meta.vendorPath %>/jquery/jquery.js'
           'js/compile/*.js'
         ]
         dest: '<%= meta.distPath %>/js/application.js'
       css:
         src: [
-          '<%= vendorPath %>/bootstrap/css/bootstrap.css'
+          '<%= meta.vendorPath %>/bootstrap/css/bootstrap.css'
           "css/compile/*.css"
         ]
         dest: '<%= meta.distPath %>/css/application.css'
@@ -72,7 +75,7 @@ module.exports = (grunt) ->
     copy:
       fonts:
         expand: true
-        cwd: '<%= vendorPath %>/bootstrap/font/'
+        cwd: '<%= meta.vendorPath %>/bootstrap/font/'
         src: ['**']
         dest: '<%= meta.distPath %>/fonts/'
       imgs:
