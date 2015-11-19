@@ -1,8 +1,9 @@
 {
-  "name": "sanhao365",
+  "name": "App Name",
   "version": "0.1.0",
   "description": "App description",
   "devDependencies": {
+    "grunt": "^0.4.5",
     "grunt-bower-task": "^0.4.0",
     "grunt-contrib-clean": "~0.4.0",
     "grunt-contrib-coffee": ">=0.4.0",
@@ -10,6 +11,7 @@
     "grunt-contrib-connect": "^0.11.2",
     "grunt-contrib-copy": ">=0.4.0",
     "grunt-contrib-sass": ">=0.4.0",
-    "grunt-contrib-watch": "~0.4.0"
+    "grunt-contrib-watch": "~0.4.0",
+    "load-grunt-tasks": "^3.3.0"
   }
 }
